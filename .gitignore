@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.vscode/
+deta/
+models/
+OpenVoice/checkpoints_v2/
+*.wav
+*.mp3
+*.zip
