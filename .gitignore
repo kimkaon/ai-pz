@@ -4,7 +4,6 @@ __pycache__/
 *.pyd
 .vscode/
 deta/
-models/
 OpenVoice/checkpoints_v2/
 *.wav
 *.mp3
