@@ -18,6 +18,7 @@ ksmevn/
 *.tar
 *.tar.gz
 *.7z
+tts_output/
 *.h5
 *.ckpt
 *.pb
@@ -28,3 +29,4 @@ ksmevn/
 *.lfs
 *.cache/
 *.log
+log_settings.json

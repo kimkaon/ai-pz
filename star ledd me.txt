@@ -1,44 +1,62 @@
-ai_pz2/
-├── main.py                 <- 메인 코드 파일 (음성/텍스트 입력, 전체 파이프라인)
-├── voice_utils.py          <- 음성 녹음, wav 저장, Whisper 기반 STT
-├── nous_hermes2_mistral_loader.py <- Nous Hermes 2 - Mistral GGUF 모델 로더 및 채팅 함수 (llama-cpp-python 기반)
-├── config_gpu.py           <- GPU 환경 설정
-├── models/                 <- GGUF 모델 파일 저장 폴더
-│   └── Nous-Hermes-2-Mistral-7B-DPO.Q5_K_M.gguf (5.13GB, RTX 3070 8GB에 최적)
-├── deta/                   <- 녹음된 wav 파일 저장 폴더
-├── star ledd me.txt        <- 최신 구조/환경/모델/정리 내역 (이 파일)
-├── qwen_loader.py          <- (내용 완전 비움, 삭제 예정)
-├── check_cuda.py           <- (내용 완전 비움, 삭제 예정)
-├── llama_loader.py         <- (내용 완전 비움, 삭제 예정)
+# [2025-07-02 최신 파일/기능 요약]
+
+## 파일 구조 및 주요 역할
+- main.py                 : 메인 진입점, 음성/텍스트 입력, 전체 파이프라인, 로그 모드(lg) 지원
+- voice_utils.py          : 음성 녹음, wav 저장, Whisper 기반 STT, log_print로 상태 출력
+- nous_hermes2_mistral_loader.py : LLM(GGUF) 모델 로딩 및 채팅 함수
+- config_gpu.py           : GPU 환경 설정
+- models/                 : GGUF 모델 파일 저장(Q5_K_M 등)
+- deta/                   : 녹음된 wav 파일 저장 폴더
+- openvoice_tts.py        : OpenVoice V2 기반 TTS, log_print로 상태/디버그 출력
+- log_settings.py         : 로그 모드/상태 관리, log_settings.json 파일로 영구 저장
+- tts_output/             : TTS 합성 음성(wav) 저장 폴더 (gitignore)
+- log_settings.json       : 로그 모드 설정 파일 (gitignore)
+
+## 주요 기능 요약
+- 음성/텍스트 입력, Whisper STT, LLM 답변, OpenVoice TTS, 로그 모드(lg), 마이크 설정/저장, 모든 로그/상태 메시지 log_print로 제어
+
+## 최근 변경 로그
+- OpenVoice V2 TTS 통합, gTTS+OpenVoice ToneColorConverter 사용, MeloTTS 제거
+- TTS 출력 tts_output/response.wav로 통일, tts_output/ 폴더 자동 생성
+- 로그 모드(lg) 추가, log_settings.py/JSON으로 영구 저장, 모든 로그/상태 메시지 log_print로 통합
+- main.py에서 로그 모드에 따라 원본/정리 응답 분기 출력
+- .gitignore에 tts_output/, log_settings.json 추가
+- 테스트 wav, test_tts.py 등 임시/테스트 파일 완전 삭제
+- Qwen 관련 파일 내용 완전 비움, 삭제 예정
+
 
 # [AI 음성/텍스트 어시스턴트 개발 계획 및 환경]
 
-## 1. LLM 모델 구조
-- Whisper 기반 음성 인식 → 텍스트 변환
-- **Nous Hermes 2 - Mistral 7B Q5_K_M GGUF** (llama-cpp-python, GPU 지원 wheel)로 답변 생성
-- 입력 방식: 음성(s) 또는 메시지(m) 선택 가능
-- RTX 3070 8GB 기준 Q5_K_M(5.13GB) 권장, Q4_K_M(4.37GB)도 사용 가능
+## 1. 전체 파이프라인 구조
+- 입력: 음성(s) 또는 메시지(m) 선택 → Whisper(faster-whisper)로 STT(음성→텍스트)
+- LLM: Nous Hermes 2 - Mistral 7B Q5_K_M(GGUF, llama-cpp-python, GPU)로 답변 생성
+- 출력: OpenVoice V2 기반 TTS로 답변을 음성(wav)으로 합성, tts_output/에 저장 및 재생
+- 로그: 'lg' 모드에서만 모델/합성/상태/디버그 로그 출력, log_settings.json에 영구 저장
+- 마이크: 사용자가 직접 선택/저장, 재설정 가능
 
-## 2. 모델 파일 준비 및 경로
-- https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF 등에서 Q5_K_M.gguf 다운로드
-- 다운로드 후 models/ 폴더에 저장, nous_hermes2_mistral_loader.py에서 해당 경로로 지정
+## 2. 모델 및 파일 준비
+- LLM 모델: https://huggingface.co/NousResearch/Nous-Hermes-2-Mistral-7B-DPO-GGUF 등에서 Q5_K_M.gguf 다운로드 후 models/ 폴더에 저장
+- TTS: OpenVoice V2 체크포인트 및 리소스 OpenVoice/ 폴더에 준비
 
 ## 3. 코드 구조
-- main.py: 음성/텍스트 입력, Llama 모델 호출, 전체 파이프라인
-- voice_utils.py: 녹음, wav 저장, Whisper 음성 인식
-- nous_hermes2_mistral_loader.py: GGUF 모델 로딩 및 채팅 함수 (프롬프트에 [INST] 태그 없이 바로 전달)
+- main.py: 전체 파이프라인, 입력/출력/로그 모드/마이크 관리
+- voice_utils.py: 음성 녹음, wav 저장, Whisper STT, log_print로 상태 출력
+- nous_hermes2_mistral_loader.py: GGUF LLM 로딩 및 채팅 함수
+- openvoice_tts.py: OpenVoice TTS 합성, log_print로 상태/디버그 출력
+- log_settings.py: 로그 모드/상태 관리, log_settings.json 파일로 영구 저장
 - config_gpu.py: GPU 환경 설정
 - deta/: 녹음된 wav 파일 저장 폴더
+- tts_output/: TTS 합성 음성(wav) 저장 폴더 (gitignore)
 
 ## 4. 환경 및 설치
-- 가상환경(ksmevn) 내에서 llama-cpp-python GPU wheel 직접 설치 필요 (Python 3.10, CUDA 12.2)
+- 가상환경(ksmevn) 내에서 llama-cpp-python GPU wheel 직접 설치 (Python 3.10, CUDA 12.2)
 - pip install .\llama_cpp_python-<버전>-cp310-cp310-win_amd64.whl
 - CUDA, Visual Studio Build Tools, CMake, git 등 필수
 - CUDA 드라이버 및 환경변수(CUDA_PATH) 정상 설정 필요
 
 ## 5. 기타
 - Qwen 관련 파일(qwen_loader.py, check_cuda.py, llama_loader.py 등)은 더 이상 사용하지 않음(내용 완전 비움, 삭제 예정)
-- star ledd me.txt에 최신 구조/모델/환경 정보만 유지
+- star ledd me.txt에 최신 구조/모델/환경/변경 내역만 유지
 
 ---
 
@@ -51,7 +69,6 @@ ai_pz2/
 
 # [불필요 파일 정리]
 - qwen_loader.py, check_cuda.py, llama_loader.py: 내용 완전 비움(사실상 삭제)
-- star ledd me.txt에 최신 구조/모델/환경/정리 내역만 유지
 
 ---
 
@@ -65,8 +82,8 @@ ai_pz2/
 - 불필요 파일 내용 완전 비움 및 삭제 예정
 
 개선 계획
-- 1.tts모델을 추가하여 사용자와 대화기능 추가
-- 2.대규모 LLM모델 보완 계획
+- 1.tts모델을 추가하여 사용자와 대화기능 추가(해결)
+- 2.대규모 LLM모델 보완 계획(현재 진행 중)
 - 3.작업특화형 파인튜닝
 - 4.인터넷 자료를 통한 학습 기능 추가
 - 5.이미지 인식 모델 추가
@@ -83,6 +100,6 @@ ai_pz2/
 
 실험 계획
 ---단일 LLM 프롬프트 엔지니어링---
--LLM에게 역할 지정 후 그 역할에 따라 답변 패턴을 스스로 지정
+-LLM에게 역할 지정 후 그 역할에 따라 답변 패턴을 스스로 지정 (성능좋음 현재 체택)
 -LLM에게 역할을 판단 할 수 있도록 파인튜닝 (방법 모름)
 -LLM에게 특정 역할에 대한 것을 따로 파인튜닝(방법 모름)

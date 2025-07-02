@@ -5,6 +5,8 @@ from faster_whisper import WhisperModel
 import numpy as np
 import time
 from mic_settings import save_mic_index, load_mic_index
+from log_settings import log_print
+from log_settings import log_print
 
 def select_input_device():
     import sounddevice as sd
@@ -34,7 +36,7 @@ def select_input_device():
         print("잘못된 입력입니다. 다시 선택하세요.")
 
 def record_voice(duration=5, fs=44100, device_name="erpon", device_index=None):
-    print("🎤 말하세요...")
+    log_print("🎤 말하세요...", "audio_processing")
     if device_index is None:
         device_index = None
         for idx, dev in enumerate(sd.query_devices()):
@@ -46,7 +48,7 @@ def record_voice(duration=5, fs=44100, device_name="erpon", device_index=None):
         device_index = None
     audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, device=device_index)
     sd.wait()
-    print("🛑 녹음이 종료되었습니다.")
+    log_print("🛑 녹음이 종료되었습니다.", "audio_processing")
     return audio, fs
 
 def record_voice_until_silence(fs=44100, device_name="erpon", silence_sec=3, silence_threshold=0.01, max_duration=60, device_index=None):
@@ -58,7 +60,7 @@ def record_voice_until_silence(fs=44100, device_name="erpon", silence_sec=3, sil
                 break
     print(f"🎤 말하세요... ({silence_sec}초 이상 조용하면 자동 종료)")
     if device_index is None:
-        print(f"❗ '{device_name}' 장치를 찾을 수 없습니다. 기본 입력 장치를 사용합니다.")
+        log_print(f"❗ '{device_name}' 장치를 찾을 수 없습니다. 기본 입력 장치를 사용합니다.", "audio_processing")
         device_index = None
 
     buffer = []
@@ -75,10 +77,10 @@ def record_voice_until_silence(fs=44100, device_name="erpon", silence_sec=3, sil
         while True:
             sd.sleep(200)
             if time.time() - last_sound > silence_sec:
-                print(f"🛑 {silence_sec}초 이상 조용하여 녹음을 종료합니다.")
+                log_print(f"🛑 {silence_sec}초 이상 조용하여 녹음을 종료합니다.", "audio_processing")
                 break
             if time.time() - start_time > max_duration:
-                print("⏰ 최대 녹음 시간 초과로 종료합니다.")
+                log_print("⏰ 최대 녹음 시간 초과로 종료합니다.", "audio_processing")
                 break
 
     audio = np.concatenate(buffer, axis=0)
@@ -96,9 +98,25 @@ def save_temp_wav(audio, fs, silence_threshold=0):
     return file_path
 
 def transcribe(audio_path):
-    model = WhisperModel("medium", device="cpu", compute_type="int8")
+    # GPU 메모리 절약을 위해 smaller 모델 사용 (medium → base)
+    # LLM이 이미 GPU 메모리를 많이 사용하고 있으므로 CPU 모델 우선 시도
+    try:
+        # CPU 모델로 먼저 시도 (GPU 메모리 절약)
+        model = WhisperModel("base", device="cpu", compute_type="int8")
+        log_print("[Whisper] CPU 모델 사용 (GPU 메모리 절약)", "model_loading")
+    except Exception as e:
+        log_print(f"[Whisper] CPU 모델 로드 실패: {e}", "model_loading")
+        # 최후 수단으로 GPU 시도
+        try:
+            model = WhisperModel("base", device="cuda", compute_type="float16")
+            log_print("[Whisper] GPU 모델 사용", "model_loading")
+        except Exception as e2:
+            log_print(f"[Whisper] GPU 모델도 실패: {e2}", "model_loading")
+            raise Exception("Whisper 모델 로드 실패")
+
     segments, _ = model.transcribe(audio_path, language="en")
     return " ".join([seg.text for seg in segments])
+
 
 def wait_for_voice(fs=44100, device_index=None, threshold=0.01, max_wait=60):
     """
@@ -106,7 +124,7 @@ def wait_for_voice(fs=44100, device_index=None, threshold=0.01, max_wait=60):
     """
     import time
     import numpy as np
-    print("🎤 녹음 대기 중... (마이크에 소리가 감지되면 자동 녹음 시작)")
+    log_print("🎤 녹음 대기 중... (마이크에 소리가 감지되면 자동 녹음 시작)", "audio_processing")
     start_time = time.time()
     detected = False
     def callback(indata, frames, time_info, status):
@@ -119,5 +137,5 @@ def wait_for_voice(fs=44100, device_index=None, threshold=0.01, max_wait=60):
             if time.time() - start_time > max_wait:
                 print("⏰ 대기 시간 초과. 다시 시도하세요.")
                 return False
-    print("🔊 소리 감지! 녹음을 시작합니다.")
+    log_print("🔊 소리 감지! 녹음을 시작합니다.", "audio_processing")
     return True
