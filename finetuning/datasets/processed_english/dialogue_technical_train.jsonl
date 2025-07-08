@@ -1,0 +1,33 @@
+# technical 대화 데이터 / technical dialogue data
+{"input_text": "How to implement React hooks?", "target_text": "React hooks allow you to use state and lifecycle features in functional components. Use useState for state, useEffect for side effects, and custom hooks for reusable logic."}
+{"input_text": "Best practices for API design?", "target_text": "API design best practices include: RESTful conventions, consistent naming, proper HTTP status codes, versioning, documentation, rate limiting, and security measures."}
+{"input_text": "How to optimize database performance?", "target_text": "Database optimization includes: proper indexing, query optimization, normalization, connection pooling, caching strategies, and regular maintenance tasks."}
+{"input_text": "Docker containerization benefits?", "target_text": "Docker provides: consistent environments, easy deployment, scalability, resource efficiency, isolation, and simplified development workflows across different platforms."}
+{"input_text": "Kubernetes deployment strategies?", "target_text": "Kubernetes deployment strategies include: rolling updates, blue-green deployments, canary releases, and A/B testing for safe application updates."}
+{"input_text": "Git workflow optimization?", "target_text": "Optimize Git workflows with: feature branches, meaningful commit messages, pull requests, code reviews, automated testing, and proper branching strategies."}
+{"input_text": "Cloud architecture patterns?", "target_text": "Cloud architecture patterns include: microservices, serverless, event-driven, CQRS, circuit breaker, and strangler fig for scalable applications."}
+{"input_text": "DevOps automation tools?", "target_text": "DevOps automation tools include: Jenkins, GitLab CI/CD, Docker, Kubernetes, Ansible, Terraform, and monitoring solutions for efficient workflows."}
+{"input_text": "Software testing methodologies?", "target_text": "Testing methodologies include: unit testing, integration testing, system testing, acceptance testing, TDD, BDD, and automated testing frameworks."}
+{"input_text": "Code review best practices?", "target_text": "Code review practices: clear guidelines, constructive feedback, automated checks, timely reviews, knowledge sharing, and focus on code quality."}
+{"input_text": "Web performance optimization?", "target_text": "Web performance optimization includes: minification, compression, caching, CDN usage, image optimization, lazy loading, and code splitting."}
+{"input_text": "Mobile app development frameworks?", "target_text": "Mobile frameworks include: React Native, Flutter, Ionic, Xamarin, and native development for iOS and Android platforms."}
+{"input_text": "RESTful API design principles?", "target_text": "RESTful API principles: stateless communication, resource-based URLs, HTTP methods, proper status codes, HATEOAS, and consistent data formats."}
+{"input_text": "GraphQL implementation guide?", "target_text": "GraphQL implementation involves: schema definition, resolvers, query optimization, caching strategies, and integration with existing APIs."}
+{"input_text": "Agile development practices?", "target_text": "Agile practices include: iterative development, daily standups, sprint planning, retrospectives, user stories, and continuous improvement."}
+{"input_text": "Continuous integration setup?", "target_text": "CI setup involves: automated builds, testing pipelines, code quality checks, deployment automation, and feedback loops for faster development."}
+{"input_text": "Load balancing techniques?", "target_text": "Load balancing techniques: round-robin, weighted routing, health checks, session persistence, and geographic distribution for high availability."}
+{"input_text": "Caching strategies implementation?", "target_text": "Caching strategies include: browser caching, CDN, Redis, Memcached, application-level caching, and cache invalidation policies."}
+{"input_text": "Security vulnerability assessment?", "target_text": "Security assessment includes: penetration testing, code analysis, dependency scanning, authentication review, and regular security audits."}
+{"input_text": "Version control management?", "target_text": "Version control management: branching strategies, merge policies, commit conventions, release management, and collaboration workflows."}
+{"input_text": "Software documentation practices?", "target_text": "Documentation practices: API documentation, code comments, README files, architecture diagrams, and keeping documentation updated."}
+{"input_text": "Performance monitoring setup?", "target_text": "Performance monitoring includes: APM tools, metrics collection, alerting, log analysis, and real-time dashboard creation."}
+{"input_text": "Error handling strategies?", "target_text": "Error handling strategies: try-catch blocks, custom exceptions, logging, user-friendly messages, and graceful degradation."}
+{"input_text": "Infrastructure as code benefits?", "target_text": "IaC benefits include: version control, reproducibility, automation, consistency, cost management, and faster environment provisioning."}
+{"input_text": "Network security implementation?", "target_text": "Network security includes: firewalls, VPNs, encryption, access controls, monitoring, and incident response procedures."}
+{"input_text": "Authentication systems design?", "target_text": "Authentication design includes: multi-factor authentication, OAuth, JWT tokens, session management, and secure password policies."}
+{"input_text": "Cross-platform development?", "target_text": "Cross-platform development uses: shared codebases, platform-specific optimizations, unified APIs, and consistent user experiences."}
+{"input_text": "Progressive web apps features?", "target_text": "PWA features include: offline functionality, push notifications, app-like experience, responsive design, and improved performance."}
+{"input_text": "Server-side rendering benefits?", "target_text": "SSR benefits: improved SEO, faster initial load, better performance on slow devices, and enhanced user experience."}
+{"input_text": "Build tool configuration?", "target_text": "Build tools configuration includes: Webpack, Rollup, Vite setup, optimization plugins, code splitting, and asset management."}
+{"input_text": "Design patterns implementation?", "target_text": "Design patterns include: Singleton, Factory, Observer, Strategy, Decorator patterns for maintainable and scalable code."}
+{"input_text": "Database migration strategies?", "target_text": "Migration strategies include: version control, rollback plans, zero-downtime deployments, data validation, and testing procedures."}

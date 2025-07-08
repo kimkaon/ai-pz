@@ -1,0 +1,27 @@
+파인튜닝 오류: TensorFlow/Keras 호환성 문제
+ValueError: Your currently installed version of Keras is Keras 3, but this is not yet supported in Transformers. Please install the backwards-compatible tf-keras package with `pip install tf-keras`.
+
+개선 지침:
+1. tf-keras 패키지 설치: pip install tf-keras
+2. 또는 TensorFlow 의존성 없는 PyTorch-only 버전 사용
+3. 환경 변수 설정으로 TensorFlow 비활성화
+4. Transformers 라이브러리를 더 안정적인 버전으로 다운그레이드 고려
+
+해결 방법:
+- 현재 환경에서는 PyTorch만 사용하는 간소화된 파인튜닝 방법 적용
+- TensorFlow 의존성 제거한 순수 PyTorch 구현 사용
+
+추가 오류 (2025년 7월 7일):
+datasets 라이브러리 Import 오류
+ImportError: cannot import name 'Dataset' from 'datasets' (unknown location)
+
+개선 지침:
+1. datasets 라이브러리 재설치: pip install datasets --upgrade
+2. 또는 transformers와 호환되는 특정 버전 설치
+3. 직접 데이터 로딩 방법으로 우회
+4. PyTorch 기본 DataLoader 사용하는 간단한 파인튜닝 스크립트 생성
+
+최종 해결책:
+- 기존 동작하는 simple_korean_finetuning.py를 영어 데이터로 수정하여 사용
+- 가상환경에서 확실한 경로로 실행
+- transformers 4.53.1 버전 사용

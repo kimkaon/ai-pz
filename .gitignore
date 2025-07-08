@@ -30,3 +30,50 @@ tts_output/
 *.cache/
 *.log
 log_settings.json
+
+# 파인튜닝 관련 제외 항목
+finetuning/logs/
+finetuning/models/*/
+finetuning/datasets/processed/
+finetuning/datasets/raw/
+*.tensorboard
+runs/
+wandb/
+
+# RTX 3070 최적화 모델 파일들
+models/rtx3070_optimized_*/
+models/*/adapter_*.bin
+models/*/adapter_config.json
+models/*/adapter_model.safetensors
+
+# 체크포인트 및 모델 파일
+checkpoint-*/
+pytorch_model.bin
+tf_model.h5
+model.safetensors
+training_args.bin
+trainer_state.json
+optimizer.pt
+scheduler.pt
+
+# LoRA 어댑터 파일들
+adapter_*.bin
+adapter_config.json
+adapter_model.safetensors
+peft_config.json
+
+# 평가 결과
+evaluation_results.json
+confusion_matrix.png
+generation_samples.json
+batch_test_results.json
+
+# 추가 모델 관련 파일들
+*.index
+*.data-*
+*.meta
+vocab.txt
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+config.json

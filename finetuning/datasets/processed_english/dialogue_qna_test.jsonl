@@ -1,0 +1,7 @@
+# qna 대화 테스트 데이터 / qna dialogue test data
+{"input_text": "How does hearing work?", "target_text": "Hearing works when sound waves vibrate the eardrum, which transmits vibrations through tiny bones to the inner ear and auditory nerve."}
+{"input_text": "What is botany?", "target_text": "Botany is the study of plants, including their structure, growth, reproduction, metabolism, development, and evolutionary relationships."}
+{"input_text": "How does protein synthesis work?", "target_text": "Protein synthesis involves transcription of DNA to RNA and translation of RNA to proteins using ribosomes and amino acids."}
+{"input_text": "What is zoology?", "target_text": "Zoology is the study of animals, including their behavior, structure, physiology, classification, and distribution in their environments."}
+{"input_text": "How does vision work?", "target_text": "Vision works when light enters the eye, is focused by the lens onto the retina, and converted to electrical signals sent to the brain."}
+{"input_text": "What is physics?", "target_text": "Physics is the study of matter, energy, and their interactions, including fundamental forces and the behavior of the universe at all scales."}

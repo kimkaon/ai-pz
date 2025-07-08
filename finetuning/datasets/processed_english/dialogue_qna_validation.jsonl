@@ -1,0 +1,6 @@
+# qna 대화 검증 데이터 / qna dialogue validation data
+{"input_text": "What is geology?", "target_text": "Geology is the study of Earth's structure, composition, and processes, including rocks, minerals, and the history of our planet."}
+{"input_text": "How does the food chain work?", "target_text": "The food chain shows how energy and nutrients flow from producers to primary consumers to secondary consumers in an ecosystem."}
+{"input_text": "What is paleontology?", "target_text": "Paleontology is the study of fossils and ancient life forms to understand the history of life on Earth and evolutionary processes."}
+{"input_text": "How do cells divide?", "target_text": "Cells divide through mitosis (for growth) or meiosis (for reproduction), ensuring proper distribution of genetic material to new cells."}
+{"input_text": "What is microbiology?", "target_text": "Microbiology is the study of microorganisms including bacteria, viruses, fungi, and parasites, and their interactions with humans and environment."}

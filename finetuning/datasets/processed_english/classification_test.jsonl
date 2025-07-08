@@ -1,0 +1,36 @@
+# 분류 모델 테스트 데이터
+# Classification model test data
+{"text": "Let's try something new", "label": 2}
+{"text": "Network security", "label": 1}
+{"text": "You're not alone", "label": 2}
+{"text": "Data encryption methods", "label": 1}
+{"text": "How does decision making work?", "label": 0}
+{"text": "Explain behavioral science", "label": 0}
+{"text": "How does touch sensation work?", "label": 0}
+{"text": "What is renewable resources?", "label": 0}
+{"text": "Infrastructure as code", "label": 1}
+{"text": "What is atmospheric science?", "label": 0}
+{"text": "How do vaccines prevent diseases?", "label": 0}
+{"text": "I'm thinking of you", "label": 2}
+{"text": "What is astronomy?", "label": 0}
+{"text": "Analytics dashboard", "label": 1}
+{"text": "Computer vision implementation", "label": 1}
+{"text": "Technical debt management", "label": 1}
+{"text": "Software testing methodologies", "label": 1}
+{"text": "Code review best practices", "label": 1}
+{"text": "Cybersecurity measures", "label": 1}
+{"text": "What is research methodology?", "label": 0}
+{"text": "What is biotechnology?", "label": 0}
+{"text": "Authorization frameworks", "label": 1}
+{"text": "Relationships enrich life", "label": 2}
+{"text": "Inner peace", "label": 2}
+{"text": "Explain the periodic table", "label": 0}
+{"text": "ETL processes", "label": 1}
+{"text": "Hope things get better", "label": 2}
+{"text": "Have a safe trip", "label": 2}
+{"text": "Build tool configuration", "label": 1}
+{"text": "Whatever you're comfortable with", "label": 2}
+{"text": "Cherishing the moment", "label": 2}
+{"text": "How do antibiotics work?", "label": 0}
+{"text": "Penetration testing", "label": 1}
+{"text": "Well deserved", "label": 2}

@@ -1,0 +1,72 @@
+# 파인튜닝 학습 설정
+
+# 기본 설정
+base:
+  project_name: "ai_pz2_finetuning"
+  workspace_dir: "e:/Work/ai pz2/finetuning"
+  device: "cuda:0"  # RTX 3070 8GB
+  mixed_precision: true
+  seed: 42
+
+# 데이터 설정
+data:
+  train_batch_size: 4  # RTX 3070에 맞춘 배치 크기
+  eval_batch_size: 8
+  max_length: 512
+  validation_split: 0.2
+  test_split: 0.1
+
+# 모델 설정
+model:
+  base_model: "microsoft/DialoGPT-medium"  # 대화 특화 모델
+  # base_model: "microsoft/DialoGPT-small"  # 메모리 부족시 사용
+  model_max_length: 512
+  pad_token: "<|endoftext|>"
+
+# 학습 설정
+training:
+  learning_rate: 5e-5
+  num_epochs: 3
+  warmup_steps: 500
+  weight_decay: 0.01
+  gradient_accumulation_steps: 2
+  save_steps: 1000
+  eval_steps: 500
+  logging_steps: 100
+  save_total_limit: 3
+
+# 대화 분류기 설정
+conversation_classifier:
+  model_type: "classification"
+  num_labels: 3  # qna, technical, general (daily_chat은 통합모델에서 처리)
+  dropout: 0.1
+  hidden_size: 768
+
+# QnA 전문 모델 설정
+qna_specialist:
+  model_type: "generation"
+  max_new_tokens: 256
+  temperature: 0.7
+  top_p: 0.9
+  repetition_penalty: 1.1
+
+# 기술 상담 전문 모델 설정
+technical_specialist:
+  model_type: "generation"
+  max_new_tokens: 300
+  temperature: 0.6
+  top_p: 0.85
+  repetition_penalty: 1.15
+
+# 로깅 설정
+logging:
+  log_level: "INFO"
+  log_dir: "logs/training_logs"
+  checkpoint_dir: "logs/checkpoints"
+  tensorboard_dir: "logs/tensorboard"
+
+# 평가 설정
+evaluation:
+  metrics: ["accuracy", "f1", "precision", "recall"]
+  early_stopping_patience: 3
+  early_stopping_threshold: 0.01

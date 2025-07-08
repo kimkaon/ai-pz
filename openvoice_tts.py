@@ -225,3 +225,63 @@ def synthesize_with_openvoice(text, output_wav_path, speaker_wav=None, language=
         raise Exception(f"OpenVoice TTS 실행 실패: {e}")
     
     return output_wav_path
+
+def synthesize_quick_tts(text, output_wav_path, language="English"):
+    """
+    빠른 TTS 합성 (실시간 스트리밍용)
+    - gTTS만 사용하여 속도 우선
+    - OpenVoice 변환 생략
+    
+    Args:
+        text (str): 합성할 텍스트
+        output_wav_path (str): 저장할 wav 파일 경로
+        language (str): 언어 ("English", "Korean", "Chinese", "Japanese", "Spanish", "French")
+    Returns:
+        output_wav_path (str): 생성된 wav 파일 경로
+    """
+    try:
+        from gtts import gTTS
+        from pydub import AudioSegment
+        import tempfile
+        
+        # 언어 매핑
+        gtts_lang_map = {
+            "English": "en",
+            "Korean": "ko", 
+            "Chinese": "zh",
+            "Japanese": "ja",
+            "Spanish": "es",
+            "French": "fr"
+        }
+        
+        gtts_lang = gtts_lang_map.get(language, "en")
+        
+        # gTTS로 빠른 음성 생성
+        tts = gTTS(text=text, lang=gtts_lang, slow=False)
+        
+        # 임시 mp3 파일
+        with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as temp_mp3:
+            temp_mp3_path = temp_mp3.name
+            tts.save(temp_mp3_path)
+        
+        # mp3를 wav로 변환
+        try:
+            audio = AudioSegment.from_mp3(temp_mp3_path)
+            audio = audio.set_frame_rate(22050).set_channels(1)
+            audio.export(output_wav_path, format="wav")
+        except Exception as e:
+            log_print(f"빠른 TTS 변환 오류: {e}", "tts_debug")
+            raise
+        finally:
+            # 임시 파일 정리
+            if os.path.exists(temp_mp3_path):
+                os.remove(temp_mp3_path)
+        
+        if os.path.exists(output_wav_path) and os.path.getsize(output_wav_path) > 0:
+            return output_wav_path
+        else:
+            raise Exception("빠른 TTS 파일 생성 실패")
+            
+    except Exception as e:
+        log_print(f"빠른 TTS 오류: {e}", "tts_debug")
+        raise Exception(f"빠른 TTS 실행 실패: {e}")

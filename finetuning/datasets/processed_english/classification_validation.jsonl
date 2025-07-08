@@ -1,0 +1,35 @@
+# 분류 모델 검증 데이터
+# Classification model validation data
+{"text": "It's a beautiful day outside", "label": 2}
+{"text": "Connections are important", "label": 2}
+{"text": "You inspire me", "label": 2}
+{"text": "Explain the water cycle", "label": 0}
+{"text": "How was your weekend?", "label": 2}
+{"text": "Augmented reality", "label": 1}
+{"text": "What is microbiology?", "label": 0}
+{"text": "What is machine learning?", "label": 0}
+{"text": "Cross-platform development", "label": 1}
+{"text": "What is clean energy?", "label": 0}
+{"text": "I'm feeling energetic", "label": 2}
+{"text": "How does the internet work?", "label": 0}
+{"text": "You make me smile", "label": 2}
+{"text": "Expanding horizons", "label": 2}
+{"text": "I'd love to hear about it", "label": 2}
+{"text": "Real-time systems", "label": 1}
+{"text": "Single page applications", "label": 1}
+{"text": "How does temperature regulation work?", "label": 0}
+{"text": "Making memories", "label": 2}
+{"text": "How does taste work?", "label": 0}
+{"text": "Always room for improvement", "label": 2}
+{"text": "That must be difficult", "label": 2}
+{"text": "AI model deployment", "label": 1}
+{"text": "Memory optimization", "label": 1}
+{"text": "Everything will be fine", "label": 2}
+{"text": "Stay positive", "label": 2}
+{"text": "You're doing amazing", "label": 2}
+{"text": "What is calculus?", "label": 0}
+{"text": "What is marine biology?", "label": 0}
+{"text": "I'm feeling happy today", "label": 2}
+{"text": "Always here for you", "label": 2}
+{"text": "Explain natural selection", "label": 0}
+{"text": "Natural language processing", "label": 1}

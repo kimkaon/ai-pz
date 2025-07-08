@@ -1,0 +1,268 @@
+# 분류 모델 데이터 - 레이블: 0=qna, 1=technical, 2=general (일반 대화는 통합모델에서 처리)
+# Classification model data - Labels: 0=qna, 1=technical, 2=general (general conversation handled by unified model)
+{"text": "Love surrounds us", "label": 2}
+{"text": "Growing and learning", "label": 2}
+{"text": "Wishing you the best", "label": 2}
+{"text": "What is conservation biology?", "label": 0}
+{"text": "I'm feeling creative today", "label": 2}
+{"text": "What is dark matter?", "label": 0}
+{"text": "Video streaming", "label": 1}
+{"text": "Hope you feel better soon", "label": 2}
+{"text": "Database indexing strategies", "label": 1}
+{"text": "Explain DNA structure", "label": 0}
+{"text": "What causes climate change?", "label": 0}
+{"text": "Thanks for listening", "label": 2}
+{"text": "How does healing work?", "label": 0}
+{"text": "Explain protein synthesis", "label": 0}
+{"text": "How does the heart pump blood?", "label": 0}
+{"text": "How do cells divide?", "label": 0}
+{"text": "Hardware integration", "label": 1}
+{"text": "Project management tools", "label": 1}
+{"text": "That's wonderful news", "label": 2}
+{"text": "Bug tracking systems", "label": 1}
+{"text": "No problem at all", "label": 2}
+{"text": "Query optimization", "label": 1}
+{"text": "What is algebra?", "label": 0}
+{"text": "Thank you for your help", "label": 2}
+{"text": "Physics simulation", "label": 1}
+{"text": "Code architecture review", "label": 1}
+{"text": "Enjoying the quiet", "label": 2}
+{"text": "How does the liver function?", "label": 0}
+{"text": "Very impressive", "label": 2}
+{"text": "Git workflow optimization", "label": 1}
+{"text": "How do enzymes function?", "label": 0}
+{"text": "Embracing change", "label": 2}
+{"text": "How to use React hooks effectively?", "label": 1}
+{"text": "What is renewable energy?", "label": 0}
+{"text": "I enjoyed our conversation", "label": 2}
+{"text": "Hyperparameter tuning", "label": 1}
+{"text": "What causes earthquakes?", "label": 0}
+{"text": "How do muscles contract?", "label": 0}
+{"text": "What is statistics?", "label": 0}
+{"text": "Cryptocurrency integration", "label": 1}
+{"text": "Curiosity drives me", "label": 2}
+{"text": "You've worked so hard", "label": 2}
+{"text": "How does the nose smell?", "label": 0}
+{"text": "NoSQL vs SQL", "label": 1}
+{"text": "Don't mention it", "label": 2}
+{"text": "Logging best practices", "label": 1}
+{"text": "Amazing achievement", "label": 2}
+{"text": "What is nuclear energy?", "label": 0}
+{"text": "I hope you have a great day", "label": 2}
+{"text": "Life is full of surprises", "label": 2}
+{"text": "How do computers process information?", "label": 0}
+{"text": "NFT marketplace", "label": 1}
+{"text": "Data warehousing", "label": 1}
+{"text": "DevOps automation tools", "label": 1}
+{"text": "How does consciousness work?", "label": 0}
+{"text": "Time series analysis", "label": 1}
+{"text": "What is zoology?", "label": 0}
+{"text": "What is evolution?", "label": 0}
+{"text": "Load balancing techniques", "label": 1}
+{"text": "What is botany?", "label": 0}
+{"text": "What is mathematics?", "label": 0}
+{"text": "Machine learning pipelines", "label": 1}
+{"text": "Can't wait to catch up", "label": 2}
+{"text": "Compliance frameworks", "label": 1}
+{"text": "What is chemistry?", "label": 0}
+{"text": "How's the weather?", "label": 2}
+{"text": "Tell me more", "label": 2}
+{"text": "What is gene therapy?", "label": 0}
+{"text": "What is space exploration?", "label": 0}
+{"text": "Explain plate tectonics", "label": 0}
+{"text": "GraphQL implementation", "label": 1}
+{"text": "Time to unwind", "label": 2}
+{"text": "I'm looking forward to seeing you", "label": 2}
+{"text": "What is oceanography?", "label": 0}
+{"text": "That was interesting", "label": 2}
+{"text": "How does memory work?", "label": 0}
+{"text": "Embedded programming", "label": 1}
+{"text": "Cloud architecture patterns", "label": 1}
+{"text": "What is photosynthesis?", "label": 0}
+{"text": "Anytime you need", "label": 2}
+{"text": "Incident response", "label": 1}
+{"text": "Peaceful evening", "label": 2}
+{"text": "I love learning", "label": 2}
+{"text": "Living in the present", "label": 2}
+{"text": "I appreciate your assistance", "label": 2}
+{"text": "Software documentation practices", "label": 1}
+{"text": "Sensor data processing", "label": 1}
+{"text": "You can count on me", "label": 2}
+{"text": "What is neuroscience?", "label": 0}
+{"text": "You're very kind", "label": 2}
+{"text": "Game development", "label": 1}
+{"text": "What is molecular biology?", "label": 0}
+{"text": "We make a great team", "label": 2}
+{"text": "How do neurons communicate?", "label": 0}
+{"text": "I'm curious about that", "label": 2}
+{"text": "Code deployment automation", "label": 1}
+{"text": "How does photosynthesis create energy?", "label": 0}
+{"text": "Ready to tackle the day", "label": 2}
+{"text": "What is geometry?", "label": 0}
+{"text": "I'm here if you need me", "label": 2}
+{"text": "Progressive web apps", "label": 1}
+{"text": "Sounds fascinating", "label": 2}
+{"text": "Community matters", "label": 2}
+{"text": "What is psychology?", "label": 0}
+{"text": "Meditation time", "label": 2}
+{"text": "You're welcome", "label": 2}
+{"text": "Feature engineering", "label": 1}
+{"text": "I'm excited about tomorrow", "label": 2}
+{"text": "Design patterns implementation", "label": 1}
+{"text": "I'm so proud of you", "label": 2}
+{"text": "Docker containerization guide", "label": 1}
+{"text": "Performance profiling", "label": 1}
+{"text": "Blockchain development", "label": 1}
+{"text": "Data preprocessing", "label": 1}
+{"text": "What is genetic engineering?", "label": 0}
+{"text": "Deep learning frameworks", "label": 1}
+{"text": "What is blockchain technology?", "label": 0}
+{"text": "What is trigonometry?", "label": 0}
+{"text": "Version control management", "label": 1}
+{"text": "No rush at all", "label": 2}
+{"text": "Smart contract programming", "label": 1}
+{"text": "Friends are precious", "label": 2}
+{"text": "Configuration management", "label": 1}
+{"text": "How do lungs function?", "label": 0}
+{"text": "I believe in you", "label": 2}
+{"text": "Good morning! How are you?", "label": 2}
+{"text": "3D modeling", "label": 1}
+{"text": "How do eyes see?", "label": 0}
+{"text": "Scalability planning", "label": 1}
+{"text": "I'm grateful for everything", "label": 2}
+{"text": "Miss you already", "label": 2}
+{"text": "What is nanotechnology?", "label": 0}
+{"text": "I'm looking forward to lunch", "label": 2}
+{"text": "How do viruses spread?", "label": 0}
+{"text": "What is probability?", "label": 0}
+{"text": "What is philosophy of science?", "label": 0}
+{"text": "Explain cellular respiration", "label": 0}
+{"text": "Performance monitoring", "label": 1}
+{"text": "Network programming", "label": 1}
+{"text": "Explain the carbon cycle", "label": 0}
+{"text": "Explain mitosis and meiosis", "label": 0}
+{"text": "How exciting!", "label": 2}
+{"text": "Schema design", "label": 1}
+{"text": "What is environmental science?", "label": 0}
+{"text": "What is paleontology?", "label": 0}
+{"text": "Code quality metrics", "label": 1}
+{"text": "How does digestion work?", "label": 0}
+{"text": "What is stem cell research?", "label": 0}
+{"text": "Recommendation systems", "label": 1}
+{"text": "How does the brain work?", "label": 0}
+{"text": "Shader development", "label": 1}
+{"text": "Knowledge is power", "label": 2}
+{"text": "Backend architecture design", "label": 1}
+{"text": "Agile development practices", "label": 1}
+{"text": "Explain electromagnetic waves", "label": 0}
+{"text": "How does reproduction work?", "label": 0}
+{"text": "I'm lucky to know you", "label": 2}
+{"text": "Best practices for database design", "label": 1}
+{"text": "API security implementation", "label": 1}
+{"text": "Goals are within reach", "label": 2}
+{"text": "Big data processing", "label": 1}
+{"text": "Graphics programming", "label": 1}
+{"text": "Privacy protection", "label": 1}
+{"text": "IoT development", "label": 1}
+{"text": "One step at a time", "label": 2}
+{"text": "Explain chemical reactions", "label": 0}
+{"text": "Congratulations on your success", "label": 2}
+{"text": "Take care of yourself", "label": 2}
+{"text": "Practice makes perfect", "label": 2}
+{"text": "Sending good vibes", "label": 2}
+{"text": "Explain the food chain", "label": 0}
+{"text": "I had a great time yesterday", "label": 2}
+{"text": "Legacy code maintenance", "label": 1}
+{"text": "Hope you're doing well", "label": 2}
+{"text": "Happy to be of service", "label": 2}
+{"text": "Package management", "label": 1}
+{"text": "Discovering new things", "label": 2}
+{"text": "How do batteries work?", "label": 0}
+{"text": "What is physics?", "label": 0}
+{"text": "Explain quantum mechanics", "label": 0}
+{"text": "Security vulnerability assessment", "label": 1}
+{"text": "Monitoring and alerting", "label": 1}
+{"text": "Edge computing", "label": 1}
+{"text": "Database migration", "label": 1}
+{"text": "What is sustainable development?", "label": 0}
+{"text": "I'm here to listen", "label": 2}
+{"text": "Take your time", "label": 2}
+{"text": "How does the kidney filter blood?", "label": 0}
+{"text": "I'm happy to help", "label": 2}
+{"text": "Never stop growing", "label": 2}
+{"text": "Neural network architecture", "label": 1}
+{"text": "Hang in there", "label": 2}
+{"text": "How do vaccines develop immunity?", "label": 0}
+{"text": "What is the theory of relativity?", "label": 0}
+{"text": "How does the immune system work?", "label": 0}
+{"text": "What is thermal dynamics?", "label": 0}
+{"text": "How does the ear detect sound?", "label": 0}
+{"text": "How do solar panels work?", "label": 0}
+{"text": "Stream processing", "label": 1}
+{"text": "Keep up the good work", "label": 2}
+{"text": "Kubernetes deployment strategies", "label": 1}
+{"text": "What is data analysis?", "label": 0}
+{"text": "Data modeling", "label": 1}
+{"text": "Model validation", "label": 1}
+{"text": "What is meteorology?", "label": 0}
+{"text": "Distributed computing", "label": 1}
+{"text": "Authentication systems", "label": 1}
+{"text": "Nice to meet you", "label": 2}
+{"text": "How does balance work?", "label": 0}
+{"text": "Audio processing", "label": 1}
+{"text": "Refactoring techniques", "label": 1}
+{"text": "Session management", "label": 1}
+{"text": "What is artificial intelligence?", "label": 0}
+{"text": "What is ecology?", "label": 0}
+{"text": "How does learning work?", "label": 0}
+{"text": "Your efforts paid off", "label": 2}
+{"text": "Have a wonderful evening", "label": 2}
+{"text": "Explain the greenhouse effect", "label": 0}
+{"text": "How do hormones work?", "label": 0}
+{"text": "Business intelligence", "label": 1}
+{"text": "I'm sorry to hear that", "label": 2}
+{"text": "Mobile app development frameworks", "label": 1}
+{"text": "Every day is a gift", "label": 2}
+{"text": "Vulnerability scanning", "label": 1}
+{"text": "Mixed reality", "label": 1}
+{"text": "What is cryptocurrency?", "label": 0}
+{"text": "Caching strategies", "label": 1}
+{"text": "Dependency injection", "label": 1}
+{"text": "What is bioinformatics?", "label": 0}
+{"text": "See you later!", "label": 2}
+{"text": "Microservices design principles", "label": 1}
+{"text": "What is biodiversity?", "label": 0}
+{"text": "I'm proud of your progress", "label": 2}
+{"text": "Protocol implementation", "label": 1}
+{"text": "Continuous integration setup", "label": 1}
+{"text": "Motivation is high", "label": 2}
+{"text": "DeFi protocols", "label": 1}
+{"text": "Socket programming", "label": 1}
+{"text": "Feeling accomplished", "label": 2}
+{"text": "Glad I could assist", "label": 2}
+{"text": "Web performance optimization", "label": 1}
+{"text": "I'm feeling relaxed", "label": 2}
+{"text": "Explain hypothesis testing", "label": 0}
+{"text": "What is genetic mutation?", "label": 0}
+{"text": "How does GPS work?", "label": 0}
+{"text": "What is cognitive science?", "label": 0}
+{"text": "Web3 development", "label": 1}
+{"text": "Frontend development tools", "label": 1}
+{"text": "What is geology?", "label": 0}
+{"text": "My pleasure", "label": 2}
+{"text": "Error handling strategies", "label": 1}
+{"text": "Productive day ahead", "label": 2}
+{"text": "Explain the scientific method", "label": 0}
+{"text": "Animation programming", "label": 1}
+{"text": "We'll figure it out together", "label": 2}
+{"text": "RESTful API design", "label": 1}
+{"text": "Adventure awaits", "label": 2}
+{"text": "Engine optimization", "label": 1}
+{"text": "How does aging occur?", "label": 0}
+{"text": "Virtual reality", "label": 1}
+{"text": "I understand how you feel", "label": 2}
+{"text": "I love spending time with family", "label": 2}
+{"text": "Backup and recovery", "label": 1}
+{"text": "Server-side rendering", "label": 1}
+{"text": "Client-side optimization", "label": 1}
+{"text": "Explain the nervous system", "label": 0}

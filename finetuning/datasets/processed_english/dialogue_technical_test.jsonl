@@ -1,0 +1,5 @@
+# technical 대화 테스트 데이터 / technical dialogue test data
+{"input_text": "Game development frameworks?", "target_text": "Game development frameworks include: Unity, Unreal Engine, Godot, and platform-specific tools for interactive experiences."}
+{"input_text": "Network programming concepts?", "target_text": "Network programming includes: socket programming, protocols, client-server architecture, and asynchronous communication."}
+{"input_text": "Cybersecurity measures implementation?", "target_text": "Cybersecurity measures include: encryption, access controls, security audits, incident response, and user training programs."}
+{"input_text": "Cloud migration strategies?", "target_text": "Cloud migration includes: assessment, planning, pilot testing, phased migration, and post-migration optimization for business continuity."}

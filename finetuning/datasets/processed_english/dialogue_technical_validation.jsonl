@@ -1,0 +1,5 @@
+# technical 대화 검증 데이터 / technical dialogue validation data
+{"input_text": "Machine learning pipeline setup?", "target_text": "ML pipeline includes: data preprocessing, feature engineering, model training, validation, deployment, and monitoring."}
+{"input_text": "Distributed computing architecture?", "target_text": "Distributed architecture includes: microservices, message queues, event sourcing, data consistency, and fault tolerance."}
+{"input_text": "Real-time systems development?", "target_text": "Real-time systems require: low latency, predictable performance, event-driven architecture, and efficient resource management."}
+{"input_text": "Blockchain development basics?", "target_text": "Blockchain development includes: smart contracts, consensus mechanisms, cryptographic security, and decentralized applications."}
