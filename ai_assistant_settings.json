@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "last_updated": 1752418871.0826893,
+  "model": {
+    "current": "rtx3070_gguf",
+    "auto_save": true,
+    "last_used": {
+      "original": true,
+      "hybrid": false,
+      "english_unified": false,
+      "rtx3070_unfiltered": true,
+      "rtx3070_language_limited": false,
+      "rtx3070_gguf": true
+    },
+    "available_models": [
+      "original",
+      "hybrid",
+      "rtx3070_unfiltered",
+      "rtx3070_language_limited",
+      "rtx3070_gguf"
+    ]
+  },
+  "logging": {
+    "verbose_mode": true,
+    "show_tts_debug": false,
+    "show_tts_status": true,
+    "show_model_loading": true,
+    "show_audio_processing": true,
+    "show_realtime_chat": false,
+    "show_general": true
+  },
+  "microphone": {
+    "device_index": null,
+    "auto_detect": true,
+    "sample_rate": 16000,
+    "channels": 1
+  },
+  "tts": {
+    "cache_enabled": true,
+    "cache_max_size": 100,
+    "default_language": "English",
+    "voice": "en-US-AriaNeural",
+    "speed": 1.0,
+    "volume": 0.9
+  },
+  "conversation": {
+    "history_max_length": 5,
+    "auto_save_history": false,
+    "context_window": 3
+  },
+  "realtime": {
+    "enabled": true,
+    "parallel_processing": true,
+    "sentence_streaming": true,
+    "audio_buffering": true,
+    "predictive_caching": true
+  },
+  "ui": {
+    "show_tips": true,
+    "show_model_info": true,
+    "compact_mode": false,
+    "color_theme": "default"
+  }
+}

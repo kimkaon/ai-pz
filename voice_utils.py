@@ -4,9 +4,35 @@ import os
 from faster_whisper import WhisperModel
 import numpy as np
 import time
-from mic_settings import save_mic_index, load_mic_index
-from log_settings import log_print
-from log_settings import log_print
+
+# 통합 설정 관리자 임포트
+try:
+    from settings_manager import get_settings_manager
+    settings_manager = get_settings_manager()
+    
+    def save_mic_index(device_index):
+        """마이크 인덱스 저장 (호환성 유지)"""
+        settings_manager.set_microphone_device(device_index)
+    
+    def load_mic_index():
+        """마이크 인덱스 로드 (호환성 유지)"""
+        return settings_manager.get('microphone.device_index')
+    
+    def log_print(message, log_type="general"):
+        """로그 출력 (호환성 유지)"""
+        if settings_manager.should_show_log(log_type):
+            print(message)
+            
+except ImportError:
+    # 폴백: 기본 함수들
+    def save_mic_index(device_index):
+        print(f"마이크 인덱스 저장: {device_index}")
+    
+    def load_mic_index():
+        return None
+    
+    def log_print(message, log_type="general"):
+        print(message)
 
 def select_input_device():
     import sounddevice as sd

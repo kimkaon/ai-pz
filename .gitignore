@@ -77,3 +77,6 @@ tokenizer.json
 tokenizer_config.json
 special_tokens_map.json
 config.json
+
+# llama.cpp 빌드 디렉토리 (서브모듈로 관리)
+llama.cpp/

@@ -14,7 +14,20 @@ import contextlib
 sys.path.append(os.path.join(os.path.dirname(__file__), "OpenVoice"))
 from openvoice.api import ToneColorConverter
 from openvoice import se_extractor
-from log_settings import log_print
+
+# 통합 설정 관리자 임포트
+try:
+    from settings_manager import get_settings_manager
+    settings_manager = get_settings_manager()
+    
+    def log_print(message, log_type="general"):
+        """로그 출력 (호환성 유지)"""
+        if settings_manager.should_show_log(log_type):
+            print(message)
+            
+except ImportError:
+    def log_print(message, log_type="general"):
+        print(message)
 
 # OpenVoice V2 모델 캐시
 _tone_color_converter = None
